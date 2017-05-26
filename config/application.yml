@@ -9,14 +9,15 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
 production:
   qiniu_access_key: krk1ZFFYgDtIo9nqwgDe027BP3IWY4lXYHizb-O3
   qiniu_secret_key: XEUY7dBVc4Ywm19DkljqADFNzGW6VhA9n4wGHTvm
-  qiniu_bucket: jdstore2
-  qiniu_bucket_domain: oqgd9rsps.bkt.clouddn.com
+  qiniu_bucket: lonlyreader
+  qiniu_bucket_domain: oqjzv3tfi.bkt.clouddn.com
 
- development:
-   qiniu_access_key: krk1ZFFYgDtIo9nqwgDe027BP3IWY4lXYHizb-O3
-   qiniu_secret_key: XEUY7dBVc4Ywm19DkljqADFNzGW6VhA9n4wGHTvm
-   qiniu_bucket: jdstore2
-   qiniu_bucket_domain: oqgd9rsps.bkt.clouddn.com
+development:
+  qiniu_access_key: krk1ZFFYgDtIo9nqwgDe027BP3IWY4lXYHizb-O3
+  qiniu_secret_key: XEUY7dBVc4Ywm19DkljqADFNzGW6VhA9n4wGHTvm
+  qiniu_bucket: lonelyreader
+  qiniu_bucket_domain: oqjzv3tfi.bkt.clouddn.com
