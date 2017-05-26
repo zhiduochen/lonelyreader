@@ -13,7 +13,7 @@
 production:
   qiniu_access_key: krk1ZFFYgDtIo9nqwgDe027BP3IWY4lXYHizb-O3
   qiniu_secret_key: XEUY7dBVc4Ywm19DkljqADFNzGW6VhA9n4wGHTvm
-  qiniu_bucket: lonlyreader
+  qiniu_bucket: lonelyreader
   qiniu_bucket_domain: oqjzv3tfi.bkt.clouddn.com
 
 development:
