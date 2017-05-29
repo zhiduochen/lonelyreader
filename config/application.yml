@@ -17,6 +17,8 @@ production:
   qiniu_bucket_domain: oqjzv3tfi.bkt.clouddn.com
   SEND_CLOUD_USER_NAME: zhiduo_test_VkPm2e
   SEND_CLOUD_USER_KEY: GBlZH01f3e46C6Rb
+  GOOGLE_CLIENT_ID: '359666636162-g1j0jj1cddqpmp3hr932n1lo4shav356.apps.googleusercontent.com'
+  GOOGLE_CLIENT_SECRET: 'Xyk2VuwEauy_V3oeLqB9vOPq'
 
 development:
   qiniu_access_key: krk1ZFFYgDtIo9nqwgDe027BP3IWY4lXYHizb-O3
@@ -25,3 +27,5 @@ development:
   qiniu_bucket_domain: oqjzv3tfi.bkt.clouddn.com
   SEND_CLOUD_USER_NAME: zhiduo_test_VkPm2e
   SEND_CLOUD_USER_KEY: GBlZH01f3e46C6Rb
+  GOOGLE_CLIENT_ID: '359666636162-g1j0jj1cddqpmp3hr932n1lo4shav356.apps.googleusercontent.com'
+  GOOGLE_CLIENT_SECRET: 'Xyk2VuwEauy_V3oeLqB9vOPq'

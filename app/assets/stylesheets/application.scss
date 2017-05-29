@@ -17,3 +17,92 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic);
+
+
+  /* Nav / Navbar Styles
+  ===================================*/
+  .navbar-brand > img {
+        display: inline-block; //图片和链接文字显示在同一行
+        margin-right: 10px; //图片和链接文字拉开一点距离
+        width: 32px; //定制图片宽度
+        height: 32px; //定制图片高度
+   }
+
+  .navbar {
+  	background: transparent;
+  //	background-color: rgba(0,0,0,0.5);
+  	border-bottom: none;
+  	padding: 0px 0 10px;
+  	transition-duration: 0.6s;
+  //	transition: background-color .5s ease 0s;
+  	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  }
+  .navbar-default .navbar-brand {
+  	color: #760000;
+  }
+  .navbar-default .navbar-nav>li>a {
+  	color: #760000;
+  //	color: #FFA726;
+  	font-weight: bold;
+  	font-size: 18px;
+  }
+  .navbar-default .navbar-nav>li {
+  	margin-right: 8px;
+  }
+  .navbar-default .navbar-nav>li:last-of-type {
+  	margin-right: 0;
+  }
+  .dropdown-menu,
+  .navbar-default .navbar-nav>li>a:hover,
+  .navbar-default .navbar-nav>.active>a,
+  .navbar-default .navbar-nav>.active>a:hover,
+  .navbar-default .navbar-nav>.active>a:focus,
+  .navbar-default .navbar-nav>.open>a,
+  .navbar-default .navbar-nav>.open>a:hover,
+  .navbar-default .navbar-nav>.open>a:focus {
+  	background: rgba(24,53,50, 0.2);
+  //	color: #FFA726;
+  	font-weight: bold;
+  	font-size: 18px;
+  }
+  .dropdown-menu {
+  	padding: 8px;
+  	box-shadow: none;
+  	border: none;
+  //	color: #FFA726;
+  }
+
+  .dropdown-menu li>a:hover {
+  	background-color: #BDBDBD;
+  }
+  .dropdown-menu li a {
+  	padding: 4px 8px;
+  	border-radius: 6px;
+  //	color: #FFA726;
+  }
+
+  .nav-dropdown-scroll {
+  	background: #e7eaea;
+  	box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.4);
+  //	color: #FFA726;
+  }
+  .navbar-toggle,
+  .navbar-default .navbar-toggle:focus,
+  .navbar-default .navbar-toggle:hover {
+    color: #FF6700;
+  background-color: #FFA726;
+  }
+
+
+  /* jQuery Styles
+  ===================================*/
+  .navbar-scroll {
+  	background: #ffffff;
+  	color: #263238;
+  	padding: 0;
+  	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+  	transition-duration: 0.6s;
+  }
