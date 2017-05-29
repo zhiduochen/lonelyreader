@@ -32,7 +32,14 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cart_items
+  resources :cart_items do
+    member do
+      post :add
+      post :minus
+    end
+  end
+
+
   resources :orders do
     member do
       post :pay_with_alipay
@@ -43,6 +50,7 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :orders
+    resources :users
     resources :favorites do
       member do
         post :remove

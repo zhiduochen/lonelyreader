@@ -1,0 +1,13 @@
+<h2>收货信息</h2>
+
+<%= simple_form_for [:account, @user] do |f| %>
+  <div class="group">
+    <%= f.input :name ,:label => "姓名" %>
+  </div>
+  <div class="group">
+    <%= f.input :address, :label => "地址"%>
+  </div>
+  <div class="group">
+    <%= f.submit "提交"  %>
+  </div>
+<% end %>
