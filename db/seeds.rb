@@ -29,40 +29,40 @@ if User.find_by(email: "1@1.com").nil?
     description: "欧洲自古希腊城邦至二战结束全脉络",
     price: 900,
     quantity: 100,
-    image: open("https://ws3.sinaimg.cn/large/006tKfTcly1fg4o01e53pj30dc07imy2.jpg")
+    image: open("https://ooo.0o0.ooo/2017/05/31/592ec1879a38e.jpg")
     )
 
   Product.create!(title: "西方哲学史",
     description: "概览二十位哲学家的观点",
     price: 600,
     quantity: 100,
-    image: open("https://ws4.sinaimg.cn/large/006tKfTcly1fg4o197obij30dc07iweo.jpg")
+    image: open("https://ooo.0o0.ooo/2017/05/31/592ec1ea9d4aa.jpg")
     )
 
   Product.create!(title: "西方艺术简史",
     description: "自希腊时期至二十世纪早期的西方视觉艺术",
     price: 900,
     quantity: 100,
-    image: open("https://ws3.sinaimg.cn/large/006tKfTcly1fg4o1p0c72j30dc07i3z3.jpg")
+    image: open("https://ooo.0o0.ooo/2017/05/31/592ec234088fc.jpg")
     )
 
   Product.create!(title: "政治哲学导论",
     description: "赏析深刻的政治思想，重塑思辨体系",
     price: 600,
     quantity: 100,
-    image: open("https://ws3.sinaimg.cn/large/006tKfTcly1fg4o25k74kj30dc07i3yt.jpg")
+    image: open("https://ooo.0o0.ooo/2017/05/31/592ec25f90105.jpg")
     )
 
   Product.create!(title: "社会学概论",
     description: "概览社会学领域研究话题",
     price: 600,
     quantity: 100,
-    image: open("https://ws3.sinaimg.cn/large/006tKfTcly1fg4o2lo600j30dc07iaax.jpg")
+    image: open("https://ooo.0o0.ooo/2017/05/31/592ec27b61c62.jpg")
     )
 
   Product.create!(title: "社会学心理学",
     description: "洞悉人心的秘密，了解自己的思绪",
     price: 600,
     quantity: 100,
-    image: open("https://ws1.sinaimg.cn/large/006tKfTcly1fg4o2z1n7tj30dc07iglv.jpg")
+    image: open("https://ooo.0o0.ooo/2017/05/31/592ec28e9a520.jpg")
     )
