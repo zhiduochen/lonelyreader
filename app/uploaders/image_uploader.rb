@@ -16,14 +16,22 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  process resize_to_fit: [800, 800]
+  process resize_to_fit: [1200, 1200]
 
   version :thumb do
-    process resize_to_fill: [200,200]
+    process resize_and_pad: [400,300]
+  end
+
+  version :common do
+    process resize_and_pad: [600, 450] #浏览器中显示的情况
   end
 
   version :medium do
-    process resize_to_fill: [400,400]
+    process resize_and_pad: [400,400]
+  end
+
+  version :small do
+    process resize_and_pad: [100, 80]
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
