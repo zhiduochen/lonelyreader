@@ -14,10 +14,10 @@
         </tr>
       </thead>
       <tbody>
-        <% @products.each do |product| %>
+        <% @products.each_with_index do |product, index| %>
           <tr>
             <td>
-              <%= product.id %>
+              <%= index + 1 %>
             </td>
             <td>
               <%= link_to product_path(product) do %>
@@ -35,7 +35,8 @@
               <%= product.price %>
             </td>
             <td>
-              <%= link_to("Edit", edit_admin_product_path(product)) %>
+              <%= link_to("Edit", edit_admin_product_path(product), :class => "btn btn-sm btn-default") %>
+              <%= link_to("Delete", admin_product_path(product), :method => :delete, :data => {:confirm => "Are you sure?"}, :class => "btn btn-sm btn-danger") %>
             </td>
           </tr>
         <% end %>

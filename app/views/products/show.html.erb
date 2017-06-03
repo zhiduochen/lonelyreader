@@ -1,46 +1,60 @@
+<div class="container">
 <div class="name", style="margin-top: 80px;">
   <div class="row">
-    <div class="col-md-6 col-md-offset-1">
+    <div class="col-md-6 ">
+      <div class="productpic text-center">
       <% if @product.image.present? %>
-        <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+        <%= image_tag(@product.image.medium.url) %>
       <% else %>
-        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+        <%= image_tag("http://placehold.it/400x400&text=No Pic") %>
       <% end %>
+      </div>
     </div>
-    <div class="col-md-5">
-      <h2> <%= @product.title %> </h2>
-      <div style="height:100px;">
-        <p>
-          <%= @product.description %>
-        </p>
-      </div>
-      <div> 库存 : <%= @product.quantity %> </div>
-      <div class="product-price"> ￥ <%= @product.price %> </div>
+    <div class="col-md-6">
+      <h2><%= @product.title %></h2>
+	    <div class="product-description">
+	      <p>
+	        <%= @product.description %>
+	      </p>
+	    </div>
+			<div class="well well-lg">价格 <span class="show-price">￥<%= @product.price %></span></div>
+	    <div>
+				<p class="light-weight">
+					运费 : 免运费
+				</p>
+				<p class="light-weight">
+					库存 : <%= @product.quantity %>
+				</p>
+			</div>
 
-      <%= simple_form_for @product, method: :post, remote: true, url: add_to_cart_product_path(@product) do |f| %>
-  			<div class="product-quantity">
-  				<%= link_to("-", "", id: "quantity-minus", class: "quantity-minus btn btn-default btn-sm disabled") %>
-  				<%= f.input_field "", name: "quantity", value: 1, max: @product.quantity, id: "quantity-input", class: "quantity-input" %>
-  				<%= link_to("+", "", id: "quantity-plus", class: "quantity-plus btn btn-default btn-sm #{@product.quantity <= 1 ? 'disabled' : ''}") %>
-  			</div>
 
-  			<% if @product.quantity.present? && @product.quantity > 0 %>
-  				<button class="btn btn-lg btn-danger" type="submit">
-  					加入购物车
-  				</button>
-  			<% else %>
-  				已销售一空，无法购买
-  			<% end %>
-  		<% end %>
+			<%= simple_form_for @product, method: :post, remote: true, url: add_to_cart_product_path(@product) do |f| %>
+				<div class="product-quantity">
+					<%= link_to("-", "", id: "quantity-minus", class: "quantity-minus btn btn-default btn-sm disabled") %>
+					<%= f.input_field "", name: "quantity", value: 1, max: @product.quantity, id: "quantity-input", class: "quantity-input" %>
+					<%= link_to("+", "", id: "quantity-plus", class: "quantity-plus btn btn-default btn-sm #{@product.quantity <= 1 ? 'disabled' : ''}") %>
+				</div>
 
-      <div class="pull-left">
-        <% if current_user && current_user.has_collected?(@product) %>
-          <%= link_to(t("取消收藏"), discollect_product_path(@product), method: :post, :class => "btn btn-default") %>
-        <% else %>
-          <%= link_to("加入收藏", collect_product_path(@product), method: :post, :class => "btn btn-default") %>
-        <% end %>
-        <div class="favo-count">收藏人气 ( <%= @product.members.count %> )</div>
-      </div>
+				<div class="row" style="padding: 15px;">
+					<div class="pull-left" style="padding-right: 15px;">
+			      <% if current_user && current_user.has_collected?(@product) %>
+			        <%= link_to("取消收藏", discollect_product_path(@product), method: :post, :class => "btn btn-default") %>
+			      <% else %>
+			        <%= link_to("加入收藏", collect_product_path(@product), method: :post, :class => "btn btn-default") %>
+			      <% end %>
+			      <div class="favo-count light-weight text-center">收藏人气 ( <%= @product.members.count %> )</div>
+			    </div>
+
+					<% if @product.quantity.present? && @product.quantity > 0 %>
+						<button class="btn btn-lg btn-danger" type="submit">
+							加入购物车
+						</button>
+					<% else %>
+						<div class="empty">已售罄</div>
+					<% end %>
+				</div>
+			<% end %>
     </div>
   </div>
+</div>
 </div>
