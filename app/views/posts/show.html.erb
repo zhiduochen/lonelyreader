@@ -1,0 +1,44 @@
+<div class="col-md-12 show-post-top">
+  <div class="container">
+    <div class="col-md-10 col-md-offset-1">
+      <h2><%= @post.title %></h2>
+      <%= @post.content %>
+      <hr />
+      <div class="text-center">
+        <%= link_to("发表评论", new_board_post_comment_path(@board, @post), class: "btn btn-primary btn-lg") %>
+      </div>
+      <hr />
+      <% @comments.each do |c| %>
+    		<div class="row">
+    			<div class="pull-left col-md-9">
+    				<%= simple_format(c.content) %>
+            <br />
+    			</div>
+
+    			<div class= "col-md-3">
+    				<div class="pull-right">
+    					<%= c.user.email %>
+    				</div>
+    			</div>
+    		</div>
+
+    		<div class="well well-sm">
+    			<div class="row">
+    				<div class="col-md-4">
+    					<%= c.created_at.to_s %>
+    				</div>
+    				<div class="col-md-8">
+              <% if (current_user && current_user.admin?) || (current_user && current_user == c.user) %>
+    					<div class="pull-right">
+    						<%= link_to("删除评论", board_post_comment_path(@board, @post, c), class: "btn btn-danger btn-sm") %>
+    					</div>
+              <% end %>
+    				</div>
+    			</div>
+    		</div>
+    		<hr />
+    	<% end %>
+
+    </div>
+  </div>
+</div>

@@ -6,6 +6,14 @@ class User < ApplicationRecord
   has_many :identifies
 
   has_many :orders
+
+  has_many :boards
+
+  has_many :relationships
+  has_many :participated_boards, :through => :relationships, :source => :board
+
+  has_many :posts
+  has_many :comments
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -53,5 +61,17 @@ class User < ApplicationRecord
 			)
 		return user
   	end
+  end
+
+  def is_member_of?(board)
+    participated_boards.include?(board)
+  end
+
+  def join!(board)
+    participated_boards << board
+  end
+
+  def quit!(board)
+    participated_boards.delete(board)
   end
 end
