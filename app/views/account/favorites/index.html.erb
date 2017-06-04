@@ -1,29 +1,46 @@
-<h2>Favorites</h2>
+<div class="col-md-12 fav-top">
+  <div class="container">
+    <div class="col-md-10 col-md-offset-1">
+      <h2>我的收藏</h2>
+        <br />
+          <div class="row">
+            <div class="col-md-3">
+              课程
+            </div>
+            <div class="col-md-3">
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th colspan="2">课程</th>
-      <th>单价</th>
-      <th>操作选项</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @products.each do |product| %>
-    <tr>
-      <td>
-        <%= link_to product_path(product) do %>
-          <% if product.image.present? %>
-            <%= image_tag(product.image.small.url, class: "thumbnail") %>
-          <% else %>
-            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            </div>
+            <div class="col-md-2 col-md-offset-1">
+              单价
+            </div>
+            <div class="col-md-2">
+              操作选项
+            </div>
+          </div>
+          <hr />
+          <% @products.each do |product| %>
+          <div class="row">
+            <div class="col-md-3">
+              <%= link_to product_path(product) do %>
+                <% if product.image.present? %>
+                  <%= image_tag(product.image.small.url, class: "thumbnail") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="col-md-3 cuscart">
+              <div class="cart-caption"><%= link_to(product.title, product_path(product)) %></div>
+            </div>
+            <div class="col-md-2 col-md-offset-1 cuscart" id="cusbtn">
+              <%= product.price %>
+            </div>
+            <div class="col-md-2 cuscart">
+              <%= link_to(content_tag(:i, "移出", class: "fa fa-trash"), remove_account_favorite_path(product), method: :post) %>
+            </div>
+          </div>
+          <hr />
           <% end %>
-        <% end %>
-      </td>
-      <td><%= link_to(product.title, product_path(product)) %></td>
-      <td><%= product.price %></td>
-      <td><%= link_to(content_tag(:i, "移出", class: "fa fa-trash"), remove_account_favorite_path(product), method: :post) %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+    </div>
+  </div>
+</div>
