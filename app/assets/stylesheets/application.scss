@@ -21,9 +21,15 @@
 
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic);
 
+body {
+  .width-50 {
+    width: 50%;
+  }
+}
 
   /* Nav / Navbar Styles
   ===================================*/
+
   .navbar-brand > img {
         display: inline-block; //图片和链接文字显示在同一行
         margin-right: 10px; //图片和链接文字拉开一点距离
@@ -201,4 +207,10 @@ html { height: 100%;}
   }
 
  }
+}
+
+// ======== product show页面 =========
+.show-price {
+  font-size: 24px;
+  color: red;
 }
