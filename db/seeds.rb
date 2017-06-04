@@ -23,12 +23,21 @@ if User.find_by(email: "1@1.com").nil?
    puts "Admin 已经建立过了，脚本跳过该步骤。"
  end
 
+ # Initialize Category
+
+  Category.create!(name: "哲学")
+  Category.create!(name: "历史学")
+  Category.create!(name: "美学")
+  Category.create!(name: "社会学")
+  Category.create!(name: "政治学")
+
  # Initialize Product
 
   Product.create!(title: "西方文明简史",
     description: "欧洲自古希腊城邦至二战结束全脉络",
     price: 900,
     quantity: 100,
+    category_id: 2,
     image: open("https://ooo.0o0.ooo/2017/05/31/592ec1879a38e.jpg")
     )
 
@@ -36,6 +45,7 @@ if User.find_by(email: "1@1.com").nil?
     description: "概览二十位哲学家的观点",
     price: 600,
     quantity: 100,
+    category_id: 1,
     image: open("https://ooo.0o0.ooo/2017/05/31/592ec1ea9d4aa.jpg")
     )
 
@@ -43,6 +53,7 @@ if User.find_by(email: "1@1.com").nil?
     description: "自希腊时期至二十世纪早期的西方视觉艺术",
     price: 900,
     quantity: 100,
+    category_id: 3,
     image: open("https://ooo.0o0.ooo/2017/05/31/592ec234088fc.jpg")
     )
 
@@ -50,6 +61,7 @@ if User.find_by(email: "1@1.com").nil?
     description: "赏析深刻的政治思想，重塑思辨体系",
     price: 600,
     quantity: 100,
+    category_id: 5,
     image: open("https://ooo.0o0.ooo/2017/05/31/592ec25f90105.jpg")
     )
 
@@ -57,6 +69,7 @@ if User.find_by(email: "1@1.com").nil?
     description: "概览社会学领域研究话题",
     price: 600,
     quantity: 100,
+    category_id: 4,
     image: open("https://ooo.0o0.ooo/2017/05/31/592ec27b61c62.jpg")
     )
 
@@ -64,5 +77,12 @@ if User.find_by(email: "1@1.com").nil?
     description: "洞悉人心的秘密，了解自己的思绪",
     price: 600,
     quantity: 100,
+    category_id: 4,
     image: open("https://ooo.0o0.ooo/2017/05/31/592ec28e9a520.jpg")
     )
+
+  # Initialize star_hall
+  Board.create!(:title => "训练营", :description => "课程为内容的方法论训练营", :user_id => 1)
+  Post.create!(:title => "新入船员报道帖", :content => "请大家畅所欲言，在楼下按统一格式回复， 格式是...",
+   :user_id => 1, :board_id => 1)
+  Review.create!(:content => "沙发", :user_id => 1, :post_id => 1)
