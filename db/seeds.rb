@@ -85,4 +85,4 @@ if User.find_by(email: "1@1.com").nil?
   Board.create!(:title => "训练营", :description => "课程为内容的方法论训练营", :user_id => 1)
   Post.create!(:title => "新入船员报道帖", :content => "请大家畅所欲言，在楼下按统一格式回复， 格式是...",
    :user_id => 1, :board_id => 1)
-  Review.create!(:content => "沙发", :user_id => 1, :post_id => 1)
+  Comment.create!(:content => "沙发", :user_id => 1, :post_id => 1)

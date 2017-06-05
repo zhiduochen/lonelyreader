@@ -34,8 +34,8 @@
   .navbar-brand > img {
         display: inline-block; //图片和链接文字显示在同一行
         margin-right: 10px; //图片和链接文字拉开一点距离
-        width: 32px; //定制图片宽度
-        height: 32px; //定制图片高度
+        width: 25px; //定制图片宽度
+        height: 25px; //定制图片高度
    }
 
   .navbar {
@@ -50,6 +50,14 @@
   .navbar-default .navbar-brand {
   	color: #760000;
   }
+
+  .navbar-default .navbar-brand:hover,
+  .navbar-default .navbar-brand:focus {
+    color: #000000; //鼠标放置在链接上的文字颜色
+
+    background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
+}
+
   .navbar-default .navbar-nav>li>a {
   	color: #760000;
   //	color: #FFA726;
@@ -70,8 +78,8 @@
   .navbar-default .navbar-nav>.open>a,
   .navbar-default .navbar-nav>.open>a:hover,
   .navbar-default .navbar-nav>.open>a:focus {
-  	background: rgba(24,53,50, 0.2);
-  //	color: #FFA726;
+  	// background: rgba(24,53,50, 0.2);
+  	color: #000000; //鼠标放到navbar的文字上时显示的颜色
   	font-weight: bold;
   	font-size: 18px;
   }
@@ -79,11 +87,11 @@
   	padding: 8px;
   	box-shadow: none;
   	border: none;
-  //	color: #FFA726;
+  	color: #ffffff;
   }
 
   .dropdown-menu li>a:hover {
-  	background-color: #BDBDBD;
+  	background-color: #760000; //这是鼠标在narbar下拉菜单文字上时的颜色
   }
   .dropdown-menu li a {
   	padding: 4px 8px;

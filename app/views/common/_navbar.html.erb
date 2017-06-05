@@ -3,7 +3,7 @@
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/" data-turbolinks="false">  燎原学院 </a>
+            <a class="navbar-brand" href="/" data-turbolinks="false"><img src='<%= image_url 'logo.png' %>' >燎原学院 </a>
 
                 <!-- 响应式导航 -->
               <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -19,7 +19,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active">
+            <li>
+            <!-- <li class="active"> -->
               <%= link_to("所有课程", products_path) %>
             </li>
             <li class="dropdown">
@@ -41,6 +42,11 @@
               <li>
                 <%= link_to("星空堂", boards_path) %>
               </li>
+
+              <li>
+                <%= link_to("燎原搜", "#") %>
+              </li>
+
               <li>
                 <%= link_to carts_path do %>
                   购物车 <i class="fa fa-shopping-cart"> </i>
